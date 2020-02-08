@@ -1,0 +1,61 @@
+// ===============================================
+// FOOTER VARIABLES
+// ===============================================
+
+$footer-content-width: 1200px;
+$footer-bg: #2B2B2B;
+$footer-bg-mobile: #2B2B2B;
+$footer-transition-time: 0.5s;
+$footer-primary-color: #FFFFFF;
+$footer-hover-color: #FFFFFF;
+
+// ==================================================
+// FOOTER COMPONENT
+// ================================================
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  margin: 0 auto;
+  max-width: $footer-content-width;
+
+  &__brand {
+    font-size: 24px;
+  }
+
+  &__list {
+    display: flex;
+    list-style-type: none;
+  }
+
+  &__item {
+    margin-right: 2rem;
+    
+    &:last-child {
+      margin-right: 2rem;
+    }
+  }
+
+  &__link {
+    display: block;
+    font-size: 0.8rem;
+    text-align: center;
+    
+    &--active {
+      color: $footer-hover-color;
+    }
+  }
+  @media screen and (max-width: 420px) {
+    &__list {
+      display: grid;
+    }
+    &__link {
+      font-size: 0.8rem;
+    }
+  }
+
+
+}

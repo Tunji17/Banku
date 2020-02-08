@@ -1,0 +1,210 @@
+// ===============================================
+// SIGNIN VARIABLES
+// ===============================================
+$signin-content-width: 1200px;
+$signin-bg: #A6BDBB;
+$signin-bg-mobile: #A6BDBB;
+$signin-transition-time: 0.5s;
+$signin-primary-color: #071b1b;
+$signin-hover-color: #FFFFFF;
+$signin-input-bg: #595959;
+$nav-secondary-color: #ffffff;
+$signin-heading-font-size-lg: 4rem;
+$signin-heading-font-size-md: 3rem;
+$signin-heading-font-size-sm: 2rem;
+$signin-heading-font-size-xs: 1rem;
+$font-weight-regular: 1rem;
+
+
+// ===============================================
+// BASE STYLES
+// ===============================================
+@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  background: $signin-bg;
+  color: $signin-primary-color;
+  font-family: 'Quicksand', sans-serif;
+}
+
+a {
+  color: $signin-primary-color;
+  text-decoration: none;
+  transition: color $signin-transition-time ease;
+
+  &:hover {
+    color: $signin-hover-color;
+  }
+}
+
+// ==================================================
+// SIGNIN COMPONENT
+// ================================================
+
+
+.signin {
+  font-family: 'Lato', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
+  min-height: 300px;
+
+  &__form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    min-height: 300px;
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    min-height: 300px;
+    margin-bottom: 10%;
+  }
+
+  &__heading {
+    font-size: 48px;
+    font-weight: $font-weight-regular;
+  }
+
+  &__row {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__input {
+    font-family: 'Lato', sans-serif;
+    font-weight: $font-weight-regular;
+    width: 20rem;
+    height: 3rem;
+    margin-bottom: 1.5rem;
+    border: none;
+    border-radius: 0.2rem;
+    background-color: $nav-secondary-color;
+    padding-left: 1rem;
+    color: $signin-primary-color;
+    display: flex;
+    flex-direction: column;
+
+    &::placeholder {
+      color: $signin-primary-color;
+    }
+  }
+
+  &__btn {
+    width: 20rem;
+    font-family: 'Lato', sans-serif;
+    height: $signin-heading-font-size-md;
+    margin-bottom: 1.5rem;
+    border: none;
+    border-radius: $signin-heading-font-size-md;
+    background-color: $signin-primary-color;
+    font-size: 0.75rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 1px;
+    color: $nav-secondary-color;
+  }
+
+  @media screen and (max-width: 1024) {
+    &__heading {
+      font-size: $signin-heading-font-size-md;
+    }
+
+    &__row {
+      width: 90%;
+    }
+
+    &__input {
+      width: 70%;
+
+    }
+
+    &__btn {
+      width: 70%;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    padding: $signin-heading-font-size-lg 0;
+
+    &__container {
+      margin-bottom: 40%;
+    }
+
+    &__heading {
+      font-size: $signin-heading-font-size-sm;
+    }
+
+    &__form {
+      padding: 5%;
+    }
+
+    &__row {
+      width: 90%;
+    }
+
+    &__input {
+      width: 70%;
+
+    }
+
+    &__btn {
+      width: 70%;
+    }
+  }
+
+  @media screen and (max-width: 420px) {
+    padding: $signin-heading-font-size-md 0;
+
+    &__container {
+      margin-bottom: 15%;
+    }
+
+    &__heading {
+      font-size: $signin-heading-font-size-md;
+      margin: 0 0 $signin-heading-font-size-lg 0;
+    }
+
+    &__form {
+      padding: 5%;
+    }
+
+    &__row {
+      width: 100%;
+    }
+
+    &__input {
+      width: 80%;
+
+    }
+
+    &__btn {
+      width: 80%;
+    }
+  }
+
+
+}

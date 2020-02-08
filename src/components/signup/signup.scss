@@ -1,0 +1,220 @@
+// ===============================================
+// SIGNUP VARIABLES
+// ===============================================
+$signup-content-width: 1200px;
+$signup-bg: #2B2B2B;
+$signup-bg-mobile: #2B2B2B;
+$signup-transition-time: 0.5s;
+$signup-primary-color: #071b1b;
+$signup-hover-color: #FFFFFF;
+$signup-input-bg: #595959;
+$nav-secondary-color: #ffffff;
+$signup-heading-font-size-lg: 4rem;
+$signup-heading-font-size-md: 3rem;
+$signup-heading-font-size-sm: 2rem;
+$signup-heading-font-size-xs: 1rem;
+$font-weight-regular: 1rem;
+
+
+// ===============================================
+// BASE STYLES
+// ===============================================
+@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+
+*, 
+*::before, 
+*::after { 
+  box-sizing: border-box; 
+}
+
+html, 
+body { 
+  height: 100%; 
+  background: $signup-bg;
+  color: $signup-primary-color;
+  font-family: 'Quicksand', sans-serif;
+}
+
+a {
+  color: $signup-primary-color;
+  text-decoration: none;
+  transition: color $signup-transition-time ease;
+  
+  &:hover {
+    color: $signup-hover-color;
+  }
+}
+
+// ==================================================
+// SIGNUP COMPONENT
+// ================================================
+
+
+.signup {
+  font-family: 'Lato', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
+  min-height: 300px;
+
+
+  &__form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    min-height: 300px;
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    min-height: 300px;
+  }
+
+  &__heading {
+    font-size: 48px;
+    font-weight: $font-weight-regular;
+  }
+
+  &__row {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__input {
+    font-family: 'Lato', sans-serif;
+    font-weight: $font-weight-regular;
+    width: 20rem;
+    height: 3rem;
+    margin-bottom: 1.5rem;
+    border: none;
+    border-radius: 0.2rem;
+    background-color: $nav-secondary-color;
+    padding-left: 1rem;
+    color: $signup-primary-color;
+    display: flex;
+    flex-direction: column;
+  
+    &--select {
+      font-family: 'Lato', sans-serif;
+      font-weight: $font-weight-regular;
+      width: 20rem;
+      height: 3rem;
+      margin-bottom: 1.5rem;
+      border: none;
+      border-radius: 0.2rem;
+      background-color: $nav-secondary-color;
+      padding-left: 1rem;
+      color: $signup-primary-color;
+      display: flex;
+      flex-direction: column;
+      padding-top: 1rem;
+      &::placeholder {
+        color: $signup-primary-color;
+      }
+    }
+    &::placeholder {
+      color: $signup-primary-color;
+    }
+  }
+  
+  &__btn {
+    height: $signup-heading-font-size-md;
+    margin-bottom: 1.5rem;
+    border: none;
+    border-radius: $signup-heading-font-size-md;
+    background-color: $signup-primary-color;
+    width: 20rem;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.75rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 1px;
+    color: $nav-secondary-color;
+  }
+
+  @media screen and (max-width: 1024) {
+    &__heading {
+      font-size: $signup-heading-font-size-md;
+    }
+
+    &__row {
+      width: 90%;
+    }
+  
+    &__input {
+      width: 70%;
+    
+    }
+    
+    &__btn {
+      width: 70%;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    padding: $signup-heading-font-size-lg 0;
+
+    &__heading {
+      font-size: $signup-heading-font-size-sm;
+    }
+
+    &__form {
+      padding: 5%;
+    }
+
+    &__row {
+      width: 90%;
+    }
+  
+    &__input {
+      width: 70%;
+    
+    }
+    
+    &__btn {
+      width: 70%;
+    }
+  }
+
+  @media screen and (max-width: 420px) {
+    padding: $signup-heading-font-size-md 0;
+
+    &__heading {
+      font-size: $signup-heading-font-size-md;
+      margin: 0 0 $signup-heading-font-size-lg 0;
+    }
+
+    &__form {
+      padding: 5%;
+    }
+
+    &__row {
+      width: 100%;
+    }
+  
+    &__input {
+      width: 80%;
+    
+    }
+    
+    &__btn {
+      width: 80%;
+    }
+  }
+
+
+}
