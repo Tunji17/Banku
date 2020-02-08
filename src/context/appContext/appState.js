@@ -109,6 +109,19 @@ const AppState = ({ children }) => {
     }
   };
 
+  const getInfo = async () => {
+    setIsLoading();
+    try {
+      const res = await BANKU_SERVICE.get('/account');
+      const user = JSON.parse(localStorage.getItem('myinfo'));
+      const updateInfo = { ...user, balance: res.data.data.balance }
+      localStorage.setItem('myinfo', JSON.stringify(updateInfo));
+      disableisLoading();
+    } catch (error) {
+      disableisLoading();
+    }
+  };
+
   return (
     <AppContext.Provider
       value={{
@@ -120,6 +133,7 @@ const AppState = ({ children }) => {
         signInUser,
         isAuthenticated: state.isAuthenticated,
         transferFunds,
+        getInfo,
       }}
     >
       {children}

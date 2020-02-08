@@ -9,15 +9,20 @@ import './dashboard.scss';
 
 const Dashboard = ({ history }) => {
   const appContext = useContext(AppContext);
-  const { transferFunds, isLoading } = appContext;
+  const { getInfo, transferFunds, isLoading } = appContext;
 
 
   const user = JSON.parse(localStorage.getItem('myinfo'));
 
   useEffect(() => {
-    if (!user?.isAuthenticated) {
+    if (user === null || user?.isAuthenticated === false) {
       history.push('/');
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
+    getInfo()
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -34,7 +39,7 @@ const Dashboard = ({ history }) => {
   // eslint-disable-next-line consistent-return
   const onSubmit = async (e) => {
     e.preventDefault();
-    transferFunds(values, history);
+    await transferFunds(values, history);
   };
 
 
@@ -48,7 +53,7 @@ const Dashboard = ({ history }) => {
             <h1 className="dashboard__account--message">
               Welcome Back,
               {' '}
-              {user.name}
+              {user?.name}
               {' '}
               !
             </h1>
@@ -58,18 +63,18 @@ const Dashboard = ({ history }) => {
                 <h3>
                   Account Number:
                   {' '}
-                  {user.number}
+                  {user?.number}
                 </h3>
                 <h3>
                   Account Type:
                   {' '}
-                  {user.type}
+                  {user?.type}
                 </h3>
                 <h3>
                   Account Balance:
                   {' '}
                   ₦
-                  {user.balance}
+                  {user?.balance}
                 </h3>
               </div>
             </div>
